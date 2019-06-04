@@ -5,14 +5,19 @@
  */
 package Utilities;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author user
  */
 public class TimeMeasurementUtility {
     
-    public static double measureTime(double startTime, double endTime) {           
-        return endTime - startTime;
+    private static final double NANO_TO_SECONDS_MULTIPLIER = 1e-9;
+    
+    public static void measureAndPrintTime(double startTime, double endTime) {           
+        String finalTime = new DecimalFormat("####.######").format((endTime - startTime) * NANO_TO_SECONDS_MULTIPLIER);
+        System.out.println("Seconds Elapsed: " + finalTime);
     }
     
     public static double calculateOptimizationTime(double time1, double time2) {

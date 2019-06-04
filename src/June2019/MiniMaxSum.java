@@ -68,6 +68,7 @@ public class MiniMaxSum {
         }
         
         System.out.println("### MiniMaxSum Algorithm ###");
+        System.out.println("inputValues size: " + inputValues.length);
         System.out.print("" + (total-min));
         System.out.print(" " + (total-max));
         System.out.println("\n\n\n");

@@ -45,9 +45,9 @@ public class AlgorithmProjectDriver {
         long endTime2 = System.nanoTime();  
         
         // Get the total duration in nanoseconds for non-optimized solution
-        double duration1 = TimeMeasurementUtility.measureTime(startTime1, endTime1);
+        double duration1 = TimeMeasurementUtility.measureAndPrintTime(startTime1, endTime1);
         // Get the total duration in nanoseconds for optimized solution
-        double duration2 = TimeMeasurementUtility.measureTime(startTime2, endTime2);
+        double duration2 = TimeMeasurementUtility.measureAndPrintTime(startTime2, endTime2);
         // Calculate percentage
         double percentageFaster = TimeMeasurementUtility.calculateOptimizationTime(duration1, duration2);
                 
@@ -69,22 +69,24 @@ public class AlgorithmProjectDriver {
     //https://www.hackerrank.com/challenges/mini-max-sum/problem
     private void callMiniMaxSum() {
         
-        int[] inputValues = new int[5];
-        inputValues[0] = 25;
-        inputValues[1] = 15;
-        inputValues[2] = 125;
-        inputValues[3] = 35;
-        inputValues[4] = 80;
+        // Generate a random length for our input array (between 1 and 5)
+        double randomNumber = Math.random() * ((5 - 1) + 1) + 1;
         
-        double startTime = System.nanoTime();
-        MiniMaxSum.MiniMaxSum(inputValues);          
-        double endTime = System.nanoTime();
+        // Create an empty array of size randomNumber
+        int[] inputValues = new int[(int)randomNumber];
         
-        DecimalFormat decimalFormat = new DecimalFormat("####.#######");
-        String finalTime = decimalFormat.format(TimeMeasurementUtility.measureTime(startTime, endTime) * 1e-9);
+        // Loop through empty array and add a random number to each spot in the array
+        for (int i = 0; i < (int)randomNumber; i++) {
+            inputValues[i] = (int) (Math.random()*((10-1)+1))+1;            
+            System.out.println("Index: " + i + ", " + inputValues[i]);
+        }
+                
+        double startTime = System.nanoTime();   // Mark the start time         
+        MiniMaxSum.MiniMaxSum(inputValues);     // Send the array through for processing
+        double endTime = System.nanoTime();     // Mark the end time
         
-        System.out.println(finalTime + " seconds");
-        
+        // Print elapsed time
+        TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        
     }
     
 }
