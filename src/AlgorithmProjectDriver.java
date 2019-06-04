@@ -45,9 +45,10 @@ public class AlgorithmProjectDriver {
         long endTime2 = System.nanoTime();  
         
         // Get the total duration in nanoseconds for non-optimized solution
-        double duration1 = TimeMeasurementUtility.measureAndPrintTime(startTime1, endTime1);
+        double duration1 = TimeMeasurementUtility.getTimeDifference(startTime1, endTime1);
         // Get the total duration in nanoseconds for optimized solution
-        double duration2 = TimeMeasurementUtility.measureAndPrintTime(startTime2, endTime2);
+        double duration2 = TimeMeasurementUtility.getTimeDifference(startTime2, endTime2);
+        
         // Calculate percentage
         double percentageFaster = TimeMeasurementUtility.calculateOptimizationTime(duration1, duration2);
                 
@@ -78,7 +79,6 @@ public class AlgorithmProjectDriver {
         // Loop through empty array and add a random number to each spot in the array
         for (int i = 0; i < (int)randomNumber; i++) {
             inputValues[i] = (int) (Math.random()*((10-1)+1))+1;            
-            System.out.println("Index: " + i + ", " + inputValues[i]);
         }
                 
         double startTime = System.nanoTime();   // Mark the start time         
