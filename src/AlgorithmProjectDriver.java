@@ -5,6 +5,8 @@
  */
 
 
+import June2019.BirthdayCakeCandles;
+import static June2019.BirthdayCakeCandles.BirthDayCakeCandles;
 import June2019.MiniMaxSum;
 import Utilities.TimeMeasurementUtility;
 import May2019.ModelStairCase0528;
@@ -24,8 +26,12 @@ public class AlgorithmProjectDriver {
         algorithmProject.callStairCase();
         
         // MiniMaxSum algorithm 6/3/2019        
-        algorithmProject.callMiniMaxSum();        
+        algorithmProject.callMiniMaxSum();      
+        
+        // BirthdayCakeCandles 6/8/2019 (Appropriate because it's my birthday!)
+        algorithmProject.callBirthdayCakeCandles();
     }    
+    
     
     // Staircase algorithm 5/28/2019
     // https://www.hackerrank.com/challenges/staircase/problem
@@ -67,7 +73,7 @@ public class AlgorithmProjectDriver {
     }
     
     // MiniMaxSum algorithm 6/3/2019
-    //https://www.hackerrank.com/challenges/mini-max-sum/problem
+    // https://www.hackerrank.com/challenges/mini-max-sum/problem
     private void callMiniMaxSum() {
         
         // Generate a random length for our input array (between 1 and 5)
@@ -88,5 +94,20 @@ public class AlgorithmProjectDriver {
         // Print elapsed time
         TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        
     }
+    
+    // BirthdayCakeCandles Chellenge 6/8/2019
+    // https://www.hackerrank.com/challenges/birthday-cake-candles/problem
+    private void callBirthdayCakeCandles() {
+        
+        int[] candles = {1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25};
+               
+        double startTime = System.currentTimeMillis();
+        BirthdayCakeCandles.BirthDayCakeCandles(candles);
+        double endTime = System.currentTimeMillis();
+        
+        // Print elapsed time
+        TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        
+    }
+    
     
 }

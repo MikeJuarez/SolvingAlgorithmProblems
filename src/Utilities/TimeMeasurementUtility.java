@@ -20,7 +20,7 @@ public class TimeMeasurementUtility {
     }
     
     public static void measureAndPrintTime(double startTime, double endTime) {           
-        String finalTime = new DecimalFormat("####.######").format((endTime - startTime) * NANO_TO_SECONDS_MULTIPLIER);
+        String finalTime = new DecimalFormat("####.######").format((getTimeDifference(startTime, endTime)) * NANO_TO_SECONDS_MULTIPLIER);
         System.out.println("Seconds Elapsed: " + finalTime);
     }
     
