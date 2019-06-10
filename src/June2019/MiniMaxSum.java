@@ -5,6 +5,8 @@
  */
 package June2019;
 
+import Utilities.TimeMeasurementUtility;
+
 /**
  * Given five positive integers, find the minimum and maximum values that can be
  * calculated by summing exactly four of the five integers. Then print the
@@ -51,7 +53,8 @@ package June2019;
  */
 public class MiniMaxSum {
     
-    public static void MiniMaxSum(int[] inputValues) {
+    public static void MiniMaxSum(int[] inputValues) {        
+        
         int min = inputValues[0];
         int max = inputValues[0];
         long total = 0;
@@ -65,13 +68,12 @@ public class MiniMaxSum {
                 max = val;
             
             total += val;
-        }
-        
-        System.out.println("### MiniMaxSum Algorithm ###");
+        }        
+      
         System.out.println("inputValues size: " + inputValues.length);
         System.out.print("" + (total-min));
-        System.out.print(" " + (total-max));
-        System.out.println("\n\n\n");
+        System.out.println(" " + (total-max));
+        
     }
 
 }

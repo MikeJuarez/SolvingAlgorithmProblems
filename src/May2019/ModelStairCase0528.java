@@ -5,6 +5,8 @@
  */
 package May2019;
 
+import Utilities.TimeMeasurementUtility;
+
 /**
  *
  *
@@ -43,7 +45,7 @@ public class ModelStairCase0528 {
     
     // Non-optimized stairCase algorithm
     public static String staircase(int n) {
-
+        
         // Initialize the final stair case
         String stairCase = "";
 
@@ -72,7 +74,7 @@ public class ModelStairCase0528 {
     
     // Optimized stairCase algorithm
     public static String staircaseOptimize1(int n) {
-        
+                
         // Initialize the final stair case
         String stairCase = "";
 

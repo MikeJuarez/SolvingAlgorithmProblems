@@ -8,6 +8,7 @@
 import June2019.BirthdayCakeCandles;
 import static June2019.BirthdayCakeCandles.BirthDayCakeCandles;
 import June2019.MiniMaxSum;
+import June2019.TimeConversion;
 import Utilities.TimeMeasurementUtility;
 import May2019.ModelStairCase0528;
 import java.text.DecimalFormat;
@@ -30,12 +31,17 @@ public class AlgorithmProjectDriver {
         
         // BirthdayCakeCandles 6/8/2019 (Appropriate because it's my birthday!)
         algorithmProject.callBirthdayCakeCandles();
+        
+        // Time Conversion 6/10/2019
+        algorithmProject.callTimeConversion();
     }    
     
     
     // Staircase algorithm 5/28/2019
     // https://www.hackerrank.com/challenges/staircase/problem
-    private void callStairCase() {                
+    private void callStairCase() {    
+        TimeMeasurementUtility.printChallengeHeader("ModelStairCase");
+        
         // Start time for non-optimized solution
         long startTime1 = System.nanoTime(); // 
         // Get the stairCase string from the non-optimized solution
@@ -57,9 +63,7 @@ public class AlgorithmProjectDriver {
         
         // Calculate percentage
         double percentageFaster = TimeMeasurementUtility.calculateOptimizationTime(duration1, duration2);
-                
-        System.out.println("### ModelStairCase Algorithm ###");
-         
+                        
         // Print the staircases
         System.out.println(stairCase1);  
         System.out.println(stairCase2);
@@ -69,12 +73,13 @@ public class AlgorithmProjectDriver {
         System.out.println("Duration 1: " + duration1);
         System.out.println("Duration 2: " + duration2);
         System.out.println("The optimized algorithm is faster by " + percentageFaster + "%");   
-        System.out.println("\n\n\n");
     }
     
     // MiniMaxSum algorithm 6/3/2019
     // https://www.hackerrank.com/challenges/mini-max-sum/problem
     private void callMiniMaxSum() {
+        
+        TimeMeasurementUtility.printChallengeHeader("MiniMaxSum");
         
         // Generate a random length for our input array (between 1 and 5)
         double randomNumber = Math.random() * ((5 - 1) + 1) + 1;
@@ -98,12 +103,29 @@ public class AlgorithmProjectDriver {
     // BirthdayCakeCandles Chellenge 6/8/2019
     // https://www.hackerrank.com/challenges/birthday-cake-candles/problem
     private void callBirthdayCakeCandles() {
+        TimeMeasurementUtility.printChallengeHeader("BirthDayCakeCandles");
         
         int[] candles = {1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25, 1, 34, 25, 72, 25, 8, 6, 4, 72, 2, 71, 0, -1, 36, 72, 25, 25, 25};
                
-        double startTime = System.currentTimeMillis();
+        double startTime = System.nanoTime();
         BirthdayCakeCandles.BirthDayCakeCandles(candles);
-        double endTime = System.currentTimeMillis();
+        double endTime = System.nanoTime();
+        
+        // Print elapsed time
+        TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        
+    }
+    
+    // Time Conversion Challenge
+    // https://www.hackerrank.com/challenges/time-conversion/problem
+    private void callTimeConversion() {
+        
+        TimeMeasurementUtility.printChallengeHeader("TimeConversion");        
+        
+        String time = "11:59:59PM";
+        
+        double startTime = System.nanoTime();
+        System.out.println(TimeConversion.TimeConversion(time));
+        double endTime = System.nanoTime();
         
         // Print elapsed time
         TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        

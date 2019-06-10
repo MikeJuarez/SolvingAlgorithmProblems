@@ -15,17 +15,21 @@ public class TimeMeasurementUtility {
     
     private static final double NANO_TO_SECONDS_MULTIPLIER = 1e-9;
     
-    public static double getTimeDifference(double startTime, double endTime) {
-        return endTime - startTime;
+    public static void printChallengeHeader(String challenge) {
+        System.out.println("\n" + "Challenge: " + challenge);
     }
-    
+
     public static void measureAndPrintTime(double startTime, double endTime) {           
-        String finalTime = new DecimalFormat("####.######").format((getTimeDifference(startTime, endTime)) * NANO_TO_SECONDS_MULTIPLIER);
-        System.out.println("Seconds Elapsed: " + finalTime);
+        String finalTime = new DecimalFormat("####.######").format((getTimeDifference(startTime, endTime)) * NANO_TO_SECONDS_MULTIPLIER);        
+        System.out.println("Seconds Elapsed: " + finalTime);        
     }
     
     public static double calculateOptimizationTime(double time1, double time2) {
        return (Math.abs(time2 - time1) / Math.min(time1, time2)) * 100;
+    }
+    
+    public static double getTimeDifference(double startTime, double endTime) {
+        return endTime - startTime;
     }
     
 }
