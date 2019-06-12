@@ -16,6 +16,8 @@ public class TimeMeasurementUtility {
     private static final double NANO_TO_SECONDS_MULTIPLIER = 1e-9;
     
     public static void printChallengeHeader(String challenge) {
+        System.out.println("\n");
+        System.out.print("-----------------------------");
         System.out.println("\n" + "Challenge: " + challenge);
     }
 

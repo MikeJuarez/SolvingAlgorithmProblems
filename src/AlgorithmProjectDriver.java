@@ -7,10 +7,12 @@
 
 import June2019.BirthdayCakeCandles;
 import static June2019.BirthdayCakeCandles.BirthDayCakeCandles;
+import June2019.GradingStudents;
 import June2019.MiniMaxSum;
 import June2019.TimeConversion;
 import Utilities.TimeMeasurementUtility;
 import May2019.ModelStairCase0528;
+import Utilities.ArrayPrinter;
 import java.text.DecimalFormat;
 
 /**
@@ -34,6 +36,9 @@ public class AlgorithmProjectDriver {
         
         // Time Conversion 6/10/2019
         algorithmProject.callTimeConversion();
+        
+        // Grading Students 6/12/2019
+        algorithmProject.callGradingStudents();
     }    
     
     
@@ -115,7 +120,7 @@ public class AlgorithmProjectDriver {
         TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        
     }
     
-    // Time Conversion Challenge
+    // Time Conversion Challenge 6/10/19
     // https://www.hackerrank.com/challenges/time-conversion/problem
     private void callTimeConversion() {
         
@@ -129,6 +134,30 @@ public class AlgorithmProjectDriver {
         
         // Print elapsed time
         TimeMeasurementUtility.measureAndPrintTime(startTime, endTime);        
+    }
+    
+    // Grading Students Challenge 6/12/19
+    // https://www.hackerrank.com/challenges/grading/problem
+    private void callGradingStudents() {
+        
+        TimeMeasurementUtility.printChallengeHeader("Calling GradingStudents()");        
+        
+        int[] grades = {73, 67, 38, 33};
+        
+        // Print the array
+        System.out.println("Input Unformatted Grades Input:");
+        ArrayPrinter.printArray(ArrayPrinter.ArrayType.INTEGER, grades);
+        
+        double startTime = System.nanoTime();
+        int[] newGrades = GradingStudents.gradingStudents(grades);
+        double endTime = System.nanoTime();
+        
+        // Print the array
+        System.out.println("Grades after reformat:");
+        ArrayPrinter.printArray(ArrayPrinter.ArrayType.INTEGER, newGrades);
+        
+        // Print elapsed time
+        TimeMeasurementUtility.measureAndPrintTime(startTime, endTime); 
     }
     
     
